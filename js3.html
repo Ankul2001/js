@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body style="display: flex;gap: 20px;">
+    <input type="number" id="num" placeholder="type number">
+    <button type="button" onclick="printtable()">Print Table</button>
+    <p id="res"></p>
+
+    <input type="number" id="num2" placeholder="type number">
+    <button type="button" onclick="printtable2()">Print Table</button>
+    <p id="res2"></p>
+
+    <script>
+        function printtable(){
+            var num = document.getElementById("num").value
+            var i=1
+            while(i<=10)
+            {
+                res= num*i
+                i=i+1
+                document.getElementById("res").innerHTML+= res +"<br>"
+                // document.write(num)"<br>"
+            }
+        }
+
+        function printtable2(){
+            var num = document.getElementById("num2").value
+           
+           for(var i=1;i<=10;i++)
+            {
+               
+                document.getElementById("res2").innerHTML+= num*i +"<br>"
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

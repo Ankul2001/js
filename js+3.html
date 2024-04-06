@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addr()">Add</button>
+    <button onclick="deleter()">Delete</button>
+    <table id="table" border="2" cellpadding="8"></table>
+
+    <script>
+        let i = 0
+        let clr = ["red", "yellow", "green", "pink", "orange", "blue"]
+        function addr() {
+            let c = 0
+            let row = document.getElementById("table").insertRow(i)
+            i++
+            for (let j = 0; j < i; j++) {
+                let cel = row.insertCell(j)
+                cel.innerHTML = "row " + i + " cell " + j + ""
+                cel.style.backgroundColor = clr[c]
+                cel.style.color = clr[c + 1]
+                c++
+                if (c > clr.length - 1) {
+                    c = 0
+                }
+            }
+        }
+        function deleter() {
+            i--
+            document.getElementById("table").deleteRow(i)
+        }
+    </script>
+</body>
+
+</html>

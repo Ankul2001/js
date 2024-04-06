@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word count</title>
+</head>
+<body>
+    <textarea id="text" onkeyup="wc()"></textarea>
+    <p id="count"></p>
+    <script>
+        function wc(){
+            var w=1
+            var x= document.getElementById("text").value
+
+            for(i=0;i<x.length;i++)
+            {
+                if(x[i]==" ")
+                {
+                    w+=1
+                }
+            }
+            document.getElementById("count").innerHTML=w
+        }
+
+    </script>
+</body>
+</html>

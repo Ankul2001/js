@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box up</title>
+</head>
+<style>
+    .item{
+        border: 5px solid red;
+        transition: 1s;
+        background:yellow;
+        height: 200px;
+        width: 200px;
+        display: inline-block;
+        position: relative;
+        border-radius: 50%;
+        margin: 100px auto;
+    }
+</style>
+<body>
+    <div id="box1" class="item" onmouseover="up1()" onmouseleave="down1()"></div>
+    <div id="box2" class="item" onmouseover="up2()" onmouseleave="down2()"></div>
+    <div id="box3" class="item" onmouseover="up3()" onmouseleave="down3()"></div>
+    <div id="box4" class="item" onmouseover="up4()" onmouseleave="down4()"></div>
+    <div id="box5" class="item" onmouseover="up5()" onmouseleave="down5()"></div>
+    
+    
+    
+    
+    <script>
+        function up1(){
+            
+            var x= document.getElementById("box1")
+            // x.style.background="yellow"
+            x.style.top="-50px"
+            x.style.zIndex=2
+            x.style.transform="scale(1.3)"
+            x.style.backgroundImage="radial-gradient(blue , red , yellow)"
+            
+        }
+        function down1(){
+            
+            var x= document.getElementById("box1")
+            x.style.top="0px"
+            x.style.background="yellow"
+            x.style.transform="scale(1)"
+            x.style.zIndex=1
+            
+        }
+        function up2(){
+            
+            var x= document.getElementById("box2")
+            x.style.backgroundImage="radial-gradient(blue , red , yellow)"
+            x.style.top="-50px"
+            x.style.zIndex=2
+            x.style.transform="scale(1.5)"
+        }
+        function down2(){
+            
+            var x= document.getElementById("box2")
+            x.style.background="yellow"
+            x.style.top="0px"
+            x.style.transform="scale(1)"
+            x.style.zIndex=1
+        }
+        function up3(){
+            
+            var x= document.getElementById("box3")
+            x.style.top="-50px"
+            x.style.backgroundImage="radial-gradient(blue , red , yellow)"
+            x.style.zIndex=2
+            x.style.transform="scale(1.5)"
+        }
+        function down3(){
+            
+            var x= document.getElementById("box3")
+            x.style.background="yellow"
+            x.style.top="0px"
+            x.style.transform="scale(1)"
+            x.style.zIndex=1
+        }
+        function up4(){
+            
+            var x= document.getElementById("box4")
+            x.style.backgroundImage="radial-gradient(blue , red , yellow)"
+            x.style.top="-50px"
+            x.style.zIndex=2
+            x.style.transform="scale(1.5)"
+        }
+        function down4(){
+            
+            var x= document.getElementById("box4")
+            x.style.top="0px"
+            x.style.background="yellow"
+            x.style.transform="scale(1)"
+            x.style.zIndex=1
+        }
+        function up5(){
+            
+            var x= document.getElementById("box5")
+            x.style.backgroundImage="radial-gradient(blue , red , yellow)"
+            x.style.top="-50px"
+            x.style.zIndex=2
+            x.style.transform="scale(1.5)"
+        }
+        function down5(){
+            
+            var x= document.getElementById("box5")
+            x.style.top="0px"
+            x.style.background="yellow"
+            x.style.transform="scale(1)"
+            x.style.zIndex=1
+        }
+    </script>
+</body>
+</html>

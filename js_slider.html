@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+
+    }
+
+    .container {
+        height: 700px;
+        width: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #left {
+        font-size: 30px;
+        border: none;
+        align-items: center;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    figure {
+        height: 90%;
+        width: 900px;
+        /* border: 1px solid gray; */
+        text-align: center;
+        transition-property: all;
+        transition: ease-out;
+        transition-duration: 2s;
+    }
+
+    figure img {
+        height: 100%;
+        width: 100%;
+        border: none;
+    }
+
+    figure ul {
+        display: flex;
+        font-size: 30px;
+        gap: 20px;
+       justify-content: center;
+       margin-top: -50px;
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        color: gray;
+        cursor: pointer;
+    }
+
+    #right {
+        align-items: center;
+        border-radius: 10px;
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+
+    }
+
+    
+</style>
+
+<body>
+    <div class="container">
+        <button id="left" onclick="left()"><</button>
+            <figure>
+                <img src="" id="img" alt="">
+                <div class="dots">
+                    <ul>
+
+                            <li class="dot" id="d0" onclick="pic0()"></li>
+                            <li class="dot" id="d1" onclick="pic1()"></li>
+                            <li class="dot" id="d2" onclick="pic2()"></li>
+                            <li class="dot" id="d3" onclick="pic3()"></li>
+                            <li class="dot" id="d4" onclick="pic4()"></li>
+                            <li class="dot" id="d5" onclick="pic5()"></li>
+                        </ul>
+                    </div>
+            </figure>
+
+        <button id="right" onclick="right()">></button>
+    </div>
+   <script>
+        let pic = ['female.jpg', 'anku.png', 'mele.jpg', 'user.jpg', 'user1.jpg', 'user2.jpg'];
+        let img = document.getElementById("img")
+        let i = 0;
+        img.src = pic[i];
+        if (i == 0) {
+            document.getElementById("d" + i + "").style.color = "black"
+
+        }
+
+        function pic0() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d0").style.color = "black"
+            img.src = pic[0]
+
+        }
+        function pic1() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d1").style.color = "black"
+            img.src = pic[1]
+            i = 1
+        }
+        function pic2() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d2").style.color = "black"
+            img.src = pic[2]
+            i = 2
+        }
+        function pic3() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d3").style.color = "black"
+            img.src = pic[3]
+            i = 3
+        }
+        function pic4() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d4").style.color = "black"
+            img.src = pic[4]
+            i = 4
+        }
+        function pic5() {
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+            }
+            document.getElementById("d5").style.color = "black"
+            img.src = pic[5]
+            i = 5
+        }
+
+        function right() {
+            i += 1;
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+                if (j >= pic.length) {
+                    j = 0
+                }
+            }
+            if (i >= pic.length) {
+                i = 0;
+            }
+            document.getElementById("d" + i + "").style.color = "black";
+            img.src = pic[i];
+        }
+        function left() {
+            i -= 1;
+            for (let j = 0; j < pic.length; j++) {
+
+                document.getElementById("d" + j + "").style.color = "gray"
+                if (j >= pic.length) {
+                    j = 0
+                }
+            }
+
+            if (i < 0) {
+                i = pic.length - 1;
+            }
+            document.getElementById("d" + i + "").style.color = "black"
+            img.src = pic[i];
+        }
+    </script>
+</body>
+
+</html>

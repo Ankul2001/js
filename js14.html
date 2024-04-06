@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        margin: 50px auto;
+        padding: 30px;
+        border: 5px solid gray;
+        border-radius: 8px;
+        box-shadow: 2px 3px 4px gray;
+        width: fit-content;
+    }
+    #txt{
+        margin: 30px auto;
+        border: 3px solid aqua;
+        display: block;
+        border-radius: 3px;
+        /* text-align:end; */
+        
+    }
+    p{
+        height: 50px;
+        width: 300px;
+        border-radius: 5px;
+        border: 2px solid ;
+        margin:20px auto;
+        font-size: 35px;
+        padding: auto;
+        box-shadow: 2px 3px 4px gray;
+
+    }
+
+</style>
+<body>
+
+    <div class="container">
+        <textarea id="txt" placeholder="type your text" onkeyup="count()" cols="30" rows="10"></textarea>
+        <p id="count2"></p>
+        <p id="count3"></p>
+        <p id="count4"></p>
+        <p id="count5"></p>
+        <p id="count1"></p>
+    </div>
+
+    <script>
+        function count() {
+
+
+            var m = document.getElementById('txt').value
+            var x = m.length
+            var  v = "aeiouAEIOU"
+            var vcount = 0
+            var c = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+            var ccount = 0
+            var n = "0123456789"
+            var ncount = 0
+            var s=1
+       
+            if (x <= 50) {
+                clr = 'green'
+            }
+            else {
+                if(x<=60){
+                    clr="orange"
+                }
+                 else{
+                clr = 'red'
+                 }
+            }
+            for (var i = 0; i < m.length; i++) {
+                for (var j = 0; j < v.length; j++) {
+                    if (m[i] == v[j]) {
+                        vcount += 1
+
+                    }
+                }
+                for (var j = 0; j < n.length; j++) {
+                    if (m[i] == n[j]) {
+                        ncount += 1
+                    }
+                }
+                for (var j = 0; j < c.length; j++) {
+                    if (m[i] == c[j]) {
+                        ccount += 1
+                    }
+
+                }}
+                for (var j = 0; j < m.length; j++) {
+                    if (m[j] == " ") {
+                        s += 1
+                    }
+
+                }
+                
+            
+
+        document.getElementById('count1').innerHTML = 'Total count : ' + x
+        document.getElementById('count2').innerHTML = 'Vowels count : ' + vcount
+        document.getElementById('count3').innerHTML = 'Consoants count : ' + ccount
+        document.getElementById('count5').innerHTML = 'Word count : ' + s
+        document.getElementById('count4').innerHTML = 'Numbers count : ' + ncount
+        document.getElementById('count1').style.color = clr
+        document.getElementById('count1').style.borderColor = clr
+        }
+    </script>
+</body>
+
+</html>

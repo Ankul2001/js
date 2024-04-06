@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo</title>
+</head>
+<style>
+    .container {
+        width: 500px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 100px;
+        
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+
+        <img src="user.jpg" alt="" id="imgs" height="500px" width="100%"><br>
+        <button onclick="male()">Male</button>
+        <button onclick="female()">Female</button>
+
+    </div>
+    <script>
+        function male() {
+            document.getElementById("imgs").src = "mele.jpg"
+        }
+        function female() {
+            document.getElementById("imgs").src = "female.jpg"
+        }
+    </script>
+</body>
+
+</html>

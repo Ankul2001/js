@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA script</title>
+</head>
+<body>
+    <!-- + -->
+    <input type="text" id="num1" placeholder="type Numver">
+    <input type="text" id="num2" placeholder="type Numver2">
+
+    <input type="button" onclick="add()" value="+">
+
+    <p id="res1"></p>
+    <!-- - --> <br>
+    <input type="text" id="num11" placeholder="type Numver">
+    <input type="text" id="num12" placeholder="type Numver2">
+
+    <input type="button" onclick="sub()" value="-">
+
+    <p id="res2"></p>
+    <!-- * -->
+     <br>
+    <input type="text" id="num21" placeholder="type Numver">
+    <input type="text" id="num22" placeholder="type Numver2">
+
+    <input type="button" onclick="mlt()" value="*">
+
+    <p id="res3"></p>
+    <!-- / --> <br>
+    <input type="text" id="num31" placeholder="type Numver">
+    <input type="text" id="num32" placeholder="type Numver2">
+
+    <input type="button" onclick="div()" value="/">
+
+    <p id="res4"></p>
+    <!-- all --> <br>
+    <input type="text" id="num41" placeholder="type Numver">
+    <input type="text" id="num42" placeholder="type Numver2">
+
+     <!-- <input type="button" onclick="add()" value="+"> 
+    <input type="button" onclick="sub()" value="-">
+    <input type="button" onclick="mlt()" value="*">
+    <input type="button" onclick="div()" value="/">  -->
+    <input type="button" onclick="per()" value="%">
+
+    <p id="res5" ></p>
+
+    <script>
+        function add(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var s= x+y
+
+            document.getElementById("res1").innerHTML = s
+            // document.write(s)
+        }
+        function sub(){
+            var x= parseInt(document.getElementById("num11").value)
+            var y= parseInt(document.getElementById("num12").value)
+            var s=x-y
+
+            document.getElementById("res2").innerHTML= s
+        }
+        function mlt(){
+            var x= parseInt(document.getElementById("num21").value)
+            var y= parseInt(document.getElementById("num22").value)
+            var s=x*y
+
+            document.getElementById("res3").innerHTML= s
+        }
+        function div(){
+            var x= parseInt(document.getElementById("num31").value)
+            var y= parseInt(document.getElementById("num32").value)
+            var s=x/y
+
+            document.getElementById("res4").innerHTML= s
+        }
+        // function add(){
+        //     var x= parseInt(document.getElementById("num41").value)
+        //     var y= parseInt(document.getElementById("num42").value)
+        //     var s=x+y
+
+        //     document.getElementById("res5").innerHTML= s
+        // }
+        // function sub(){
+        //     var x= parseInt(document.getElementById("num41").value)
+        //     var y= parseInt(document.getElementById("num42").value)
+        //     var s=x-y
+
+        //     document.getElementById("res5").innerHTML= s
+        // }
+        // function mlt(){
+        //     var x= parseInt(document.getElementById("num41").value)
+        //     var y= parseInt(document.getElementById("num42").value)
+        //     var s=x*y
+
+        //     document.getElementById("res5").innerHTML= s
+        // }
+        // function div(){
+        //     var x= parseInt(document.getElementById("num41").value)
+        //     var y= parseInt(document.getElementById("num42").value)
+        //     var s=x/y
+
+        //     document.getElementById("res5").innerHTML= s
+        // }
+        function per(){
+            var x= parseInt(document.getElementById("num41").value)
+            var y= parseInt(document.getElementById("num42").value)
+            var s=x%y
+
+            document.getElementById("res5").innerHTML= s
+        }
+    </script>
+</body>
+</html>

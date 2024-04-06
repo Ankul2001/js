@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoom in & zoom out</title>
+</head>
+<style>
+    #pic {
+        transition: 1s;
+        margin-top: 30px;
+    }
+
+    #para {
+        transition: 0.5s;
+    }
+
+    button {
+        position: fixed;
+    }
+
+    #btn1 {
+        left: 20px;
+    }
+
+    #btn2 {
+        left: 100px;
+    }
+</style>
+
+<body>
+    <img src="mele.jpg" id="pic" alt="" onmouseover="zoomin()" onmouseleave="zoomout()" height="100px" width="100px">
+    <button onclick="zoomin()" id="btn1">Zoom In</button>
+    <button onclick="zoomout()" id="btn2">Zoom Out</button>
+
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum doloremque perferendis architecto,
+        exercitationem consectetur velit blanditiis dignissimos alias sint fugiat unde voluptatibus nobis sequi sed
+        tempore cum qui ratione odit ut eos quaerat rerum!</p>
+
+    <script>
+        var i = document.getElementById("pic")
+        // for img
+        var x = 50
+        var h = 100
+        var w = 100
+        // for para
+        var y = 5
+        var f = 15
+        function zoomin() {
+            // document.getElementById("pic").style.width="200px"
+            // document.getElementById("pic").style.height="200px"
+            h += x
+            w += x
+            i.style.width = w + "px"
+            i.style.height = h + "px"
+            i.style.boxShadow ="7px 7px 8px red"
+
+            // f+=y
+            // document.getElementById("para").style.fontSize=f+"px"
+
+        }
+        function zoomout() {
+            // document.getElementById("pic").style.width="100px"
+            // document.getElementById("pic").style.height="100px"
+            h -= x
+            w -= x
+            i.style.width = w + "px"
+            i.style.height = h + "px"
+            // f-=y
+            // document.getElementById("para").style.fontSize=f+"px"
+        }
+    </script>
+</body>
+
+</html>

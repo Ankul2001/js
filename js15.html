@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user pic by loop</title>
+</head>
+<body>
+    <!-- <img src="" id="pic" alt=""> -->
+    <!-- <i class="material-icons">example</i> -->
+
+    <script>
+        for(let i=1;i<6;i++)
+        {
+            // document.getElementById("pic").src="user"+i+".jpg"
+            document.write("<img src='user"+i+".jpg'>")
+         
+        }
+       
+        document.write("<br>array")
+
+
+        let ar=["user1.jpg","user2.jpg","user3.jpg","user4.jpg","user5.jpg"]
+      
+        for(let i=0;i<ar.length;i++)
+        {
+            document.write("<br><img src="+ar[i]+">")
+             
+        }
+
+        
+    </script>
+</body>
+</html>

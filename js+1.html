@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert Row() & insert Cell()</title>
+</head>
+<style>
+    tr{
+        height: 20px ;
+        width: 40px ;
+        
+    }
+</style>
+<body>
+    <button onclick="addrow()">Create row</button>
+    <button onclick="deleterow()">Delete row</button><br><br>
+    <table id="table" border="2" cellpadding="10" cellspacing="0">
+
+    </table>
+    <br>
+
+    <script>
+       let i=0
+        function addrow(){
+            let c=0
+            var row =document.getElementById("table").insertRow(i)
+           row.insertCell(c).innerHTML="row "+i+" cell "+c+""
+           c+=1   
+           row.insertCell(c).innerHTML="row "+i+" cell "+c+""
+           i++
+        }
+        function deleterow(){
+
+            i--
+            document.getElementById("table").deleteRow(i)
+        }
+    </script>
+</body>
+</html>

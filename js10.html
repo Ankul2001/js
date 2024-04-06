@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter count</title>
+</head>
+<body>
+    <div class="container">
+        <textarea name="" id="text" part="text" onkeyup="count()" cols="30" rows="10"></textarea>
+        <p id="count"></p>
+    </div>
+
+
+
+
+    <script>
+        function count(){
+            var x=0
+            var l= document.getElementById("text").value
+            var z=l.length
+
+            if(x>50)
+            {
+                cls="red"
+            }
+            else{
+                cls="green"
+            }
+            document.getElementById("count").innerHTML="count :"+z
+            document.getElementById("count").style.color=clr
+        }
+
+
+      
+        
+    </script>
+</body>
+</html>

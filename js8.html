@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>password</title>
+</head>
+<style>
+    #imgs{
+        margin-left: -20px;
+        margin-top: 1px;
+    }
+</style>
+<body>
+    <!-- <input type="password" placeholder="type password" id="password"><img src="unseen.png" height="10px"  id="imgs" onclick="showpassword()" ></i> -->
+    <input type="password" placeholder="type password" onkeyup="check()" id="password"><img src="unseen.png" height="10px"  id="imgs" onmouseleave="hidepass()"    onmouseover="showpassword()"  ></i>
+
+    <!-- <button onclick="check()">Check</button> -->
+    <p id="res"></p>
+
+</body>
+
+    <script>
+        function showpassword(){
+            // var type = document.getElementById("password").type
+            // if(type=="password")
+            // {
+                document.getElementById("password").type="text"
+                document.getElementById("imgs").src="eye-close-up.png"
+            // }
+            // else{
+            //     document.getElementById("password").type="password"
+            //     document.getElementById("imgs").src="unseen.png"
+
+            // }
+        }
+        function hidepass(){
+           
+            document.getElementById("password").type="password"
+            document.getElementById("imgs").src="unseen.png"
+            
+        }
+        
+        function check(){
+            var x= document.getElementById("password").value
+            var msg=""
+            if(x.length<6 || x.length>8)
+            {
+                msg="Invalid Password"
+                color="red"
+            }
+            else{
+                msg="Vailid Password"
+                color="green"
+            }
+            
+            document.getElementById("res").innerHTML=msg
+            document.getElementById("res").style.color=color
+        }
+    </script>
+</html>

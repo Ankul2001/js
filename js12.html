@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>found</title>
+</head>
+<style>
+    #count{
+        height: 200px;
+        width: 200px;
+        border: 2px solid red;
+    }
+</style>
+<body>
+    <textarea name="" id="txt" cols="30" rows="10" placeholder="text" onkeyup="ginti()"></textarea>
+    <!-- <input type="text" id="txt" placeholder="text" onkeyup="ginti()"> -->
+    <p id="count"></p>
+    <script>
+        // var w="ankul"
+        function ginti(){
+        var w=document.getElementById("txt").value
+        var v="aeiouAEIOU"
+        var count=0
+
+        for(var i=0;i<w.length;i++)
+        {
+            for(var j=0;j<v.length;j++){
+                if(w[i]==v[j])
+                {
+                    count+=1
+                }
+            }
+        }
+        document.getElementById("count").innerHTML=count
+        // document.write(count)
+    }
+    </script>
+</body>
+</html>

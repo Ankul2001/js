@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        background-color:rgba(248, 87, 87, 0.56);
+    }
+    .box{
+        width: 400px;
+        height: fit-content;
+        margin: 100px auto 0 auto;
+        padding: 20px;
+        border: 5px solid black;
+        box-shadow: 5px 5px 10px red;
+        border-radius: 10px;
+        background-color:black;
+        color: rgba(255, 0, 0, 0.929);
+    }
+    header{
+        border-bottom: 2px solid;
+        margin-bottom:20px ;
+    }
+    header h1{
+        font-size: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+        margin: 20px 0 20px 0;
+       
+    }
+    .num{
+        height: 300px;
+        width: auto;
+        border-bottom: 2px solid;
+        display: flex;
+    }
+    .lnum{
+        /* border: 1px solid; */
+        height: auto;
+        align-items: center;
+        width: 70%;
+    }
+    #num1{
+        height: 100px;
+        width: 230px;
+        border: 2px solid gray;
+        text-align: end;
+        font-size: 50px;
+        margin: 10.5px;
+    }
+    #num2{
+        height: 100px;
+        width: 230px;
+        border: 2px solid gray;
+        text-align: end;
+        font-size: 50px;
+        margin: 10.5px ;
+    }
+    .rnum{
+        /* border: 1px solid; */
+        height: auto;
+        align-items: center;
+        padding-top: 8px;
+        padding-left: 10px;
+        width: 30%;
+    }
+   
+   
+    .btn1{
+        height: 50px;
+        margin-top: 4px ;
+        margin-right: 20px;
+        width: 80px;
+    }
+   .lnum input , .rnum input{
+    font-size: 30px;
+    box-shadow: 2px 3px 3px red;
+   }
+   .rnum input{
+    background-color: rgb(113, 216, 239);
+   }
+   .rnum input:active{
+    background-color: blue;
+    color: white;
+   }
+    .answ{
+        width: 350px;
+        height: 90px;
+        text-align: end;
+        font-size: 55px;
+       
+        /* border/: 2px solid; */
+        padding: 10px;
+    }
+    .answ #ans{
+        border: 2px solid gray;
+        margin-top: 0px;
+        height: 100%;
+         box-shadow: 2px 3px 3px red;
+        margin-top: 10px;
+        overflow-x: auto;
+        /* overflow: hidden; */
+        background-color: rgb(250, 250, 250);
+    }
+
+</style>
+<body>
+    
+    <div class="box">
+        <header>
+            <h1>Calculator</h1>
+        </header>
+        <div class="num">
+            <div class="lnum">
+                <input type="text" id="num1" placeholder="0">
+                <input type="text" id="num2" placeholder="0">
+                <button id="btn" onclick="crl()">c</button>
+            </div>
+            <div class="rnum">
+                
+                <input type="button" onclick="add()" class="btn1" value="+">
+                <input type="button" onclick="sub()" class="btn1" value="-">
+                <input type="button" onclick="div()" class="btn1" value="/">
+                <input type="button" onclick="mlt()" class="btn1" value="X">
+                <input type="button" onclick="per()" class="btn1" value="%">
+           
+            </div>
+        </div>
+        <div class="answ">
+            <p id="ans" ></p>
+        </div>
+    </div>
+
+
+
+    <script>
+        function add(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var z=x+y 
+            document.getElementById("ans").innerHTML= z           
+        }
+        function sub(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var z=x-y 
+            document.getElementById("ans").innerHTML= z           
+        }
+        function div(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var z=x/y 
+            document.getElementById("ans").innerHTML= z           
+        }
+        function mlt(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var z=x*y 
+            document.getElementById("ans").innerHTML= z           
+        }
+        function per(){
+            var x= parseInt(document.getElementById("num1").value)
+            var y= parseInt(document.getElementById("num2").value)
+            var z=x*y/100
+            document.getElementById("ans").innerHTML= z           
+        }
+        function clr(){
+
+        
+            document.getElementById("num1").value="0" 
+            document.getElementById("num2").value="0"
+            document.getElementById("ans").innerHTML=""
+
+        }
+    </script>
+</body>
+</html>

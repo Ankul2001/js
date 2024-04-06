@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="row">
+    <input type="number" id="cell">
+    <button onclick="tbl()">Print</button><br><br>
+    <table id="table" border="2" cellpadding="5"></table>
+
+
+
+    <script>
+        function tbl(){
+            let r= parseInt(document.getElementById("row").value)
+            let c= parseInt(document.getElementById("cell").value)
+            
+            
+            for(let i=0;i<r;i++)
+            {
+                let row=document.getElementById("table").insertRow(i)
+                for(let j=0;j<c;j++)
+                {
+                    let cell=row.insertCell(j)
+                    // cell.innerHTML= "<input type='text' placeholder='type'>"
+                    cell.innerHTML= "row " + (i+1) + " cell " + (j+1) + ""
+                    
+                    if((i+1)%2!=0)
+                    {
+                        if((j+1)%2!=0)
+                        {
+                          cell.style.backgroundColor ="red"
+                          cell.style.color="white"
+                        }
+                    }
+                    else{
+                        if((j+1)%2==0)
+                        {
+                          cell.style.backgroundColor ="red"
+                          cell.style.color="white"
+                        }
+
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time duration</title>
+</head>
+<p id="time"></p>
+<button onclick="start()" id="start">Start</button>
+<button onclick="stop()" >Stop</button>
+<body>
+    <script>
+        i=0
+        var timer=""
+        function time(){
+            i+=1
+
+            if(i<=180){
+            document.getElementById("time").style.color="red"
+            }
+            if(i<=150){
+            document.getElementById("time").style.color="orange"
+            }
+            if(i<=100){
+            document.getElementById("time").style.color="blue"
+            }
+
+            if(i<=50){
+            document.getElementById("time").style.color="green"
+            }
+            document.getElementById("time").innerHTML=i
+
+
+            if(i%100==0){
+                stop()
+            }
+        }
+        // setInterval ('time()',500)
+
+
+
+        // or
+
+        // i=0
+        // var timer=setInterval (
+        // function() {
+        //     i+=1
+        //     document.getElementById("time").innerHTML=i
+
+        // },
+        // 500
+        
+        // )
+        function start(){
+            timer=setInterval(time,100)
+            document.getElementById("start").disabled=true
+        }
+        function stop(){
+            clearInterval(timer)
+            document.getElementById("start").disabled=false
+        }
+
+
+    </script>
+</body>
+</html>

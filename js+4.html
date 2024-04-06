@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input in table</title>
+</head>
+<style>
+    td{
+        height: 20px;
+        width: 150px;
+    }
+    button{
+        height: 20px;
+        width: 20px;
+        align-self: center;
+        text-align: center;
+    }
+</style>
+<body>
+    <table border="2" cellpadding="5">
+        <thead><h1>DATA</h1></thead>
+        <tbody id="table">
+            <tr style="background-color: gray;">
+                <td>Sr.</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>Num.</td>
+                <td>Add/Delete</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button onclick='addr()'>+</button><button onclick='deleter()'>-</button></td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+
+
+    <script>
+        var x=1
+        function addr(){
+            
+            let tab = document.getElementById("table")
+            let r = document.createElement('tr')
+            tab.appendChild(r)
+            let c1= document.createElement('td')
+            let c2= document.createElement('td')
+            let c3= document.createElement('td')
+            let c4= document.createElement('td')
+            let c5= document.createElement('td')
+            r.appendChild(c1).innerHTML="<input type='taxt' placeholder='type'>"
+            r.appendChild(c2).innerHTML="<input type='taxt' placeholder='type'>"
+            r.appendChild(c3).innerHTML="<input type='taxt' placeholder='type'>"
+            r.appendChild(c4).innerHTML="<input type='taxt' placeholder='type'>"
+            let add= r.appendChild(c5)
+            add.innerHTML="<button onclick='addr()'>+</button><button onclick='deleter()'>-</button> "
+            if(x%2!=0)
+            {
+                r.style.background="gray"
+            }
+            x++
+
+        }
+        function deleter(){
+            if(x>1){
+            document.getElementById('table').deleteRow(x)
+            x--
+            }
+        }
+    </script>
+</body>
+</html>

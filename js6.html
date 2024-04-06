@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=3, initial-scale=1.0">
+    <title>color</title>
+</head>
+<style>
+    #box{
+        height: 500px;
+        width: 60%;
+        border: 4px solid black;
+        margin: auto;
+    }
+    .btns{
+        display: flex;
+        height: 50px;
+        width: 80%;
+        flex-flow:wrap;
+        /* flex-direction: row; */
+        /* align-items: center; */
+        margin:20px auto;
+        justify-content: center;
+        gap: 30px;
+    }
+    .btn{
+        width: 100px;
+        font-size: 30px;
+    }
+    #btn1{
+        background-color: red;
+        color: white;
+    }
+    #btn2{
+        background-color: green;
+        color: yellow;
+    }
+    #btn3{
+        background-color: yellow;
+        color: red;
+    }
+    #btn4{
+        background-color: blue;
+        color: white;
+    }
+    #btn5{
+        background-color: pink;
+        color: red;
+    }
+    #btn6{
+        background-color:gray;
+        color: white;
+    }
+</style>
+<body>
+    <p id="box">
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam ratione quia harum, saepe assumenda quos sequi recusandae exercitationem nemo vero animi rem obcaecati, accusamus odio similique aut sunt atque! Repudiandae veniam autem in consequuntur, ab totam ducimus nobis rem harum nulla error fugit similique voluptates, illo molestias, quasi dignissimos animi?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque facere, quis laborum similique quos natus? Non id dicta ipsa alias possimus fugiat sint recusandae laboriosam aut modi repudiandae, unde ea perspiciatis earum assumenda labore quibusdam delectus saepe veniam animi ipsum fuga quisquam accusamus error. Est impedit repellat eaque quis ipsa!
+    </p>
+    <div class="btns">
+
+        <button type="button" class="btn" id="btn1" onmouseover="red()" onmouseleave="transparent()">Red</button>
+        <button type="button" class="btn" id="btn2" onmouseover="green()" onmouseleave="transparent()">Green</button>
+        <button type="button" class="btn" id="btn3" onmouseover="yellow()" onmouseleave="transparent()">Yellow</button>
+        <button type="button" class="btn" id="btn4" onmouseover="blue()" onmouseleave="transparent()">Blue</button>
+        <button type="button" class="btn" id="btn5" onmouseover="pink()" onmouseleave="transparent()">Pink</button>
+        <button type="button" class="btn" id="btn6" onmouseover="gray()" onmouseleave="transparent()">Gray</button>
+    </div>
+
+
+    <script>
+
+        function red(){
+            document.getElementById("box").style.backgroundColor="red"
+            document.getElementById("box").style.color="white"
+        }
+        function green(){
+            document.getElementById("box").style.backgroundColor="green"
+            document.getElementById("box").style.color="yellow"
+        }
+        function yellow(){
+            document.getElementById("box").style.backgroundColor="yellow"
+            document.getElementById("box").style.color="red"
+        }
+        function blue(){
+            document.getElementById("box").style.backgroundColor="blue"
+            document.getElementById("box").style.color="white"
+        }
+        function pink(){
+            document.getElementById("box").style.backgroundColor="pink"
+            document.getElementById("box").style.color="red"
+        }
+        function gray(){
+            document.getElementById("box").style.backgroundColor="gray"
+            document.getElementById("box").style.color="white"
+        }
+        function transparent(){
+            document.getElementById("box").style.backgroundColor="transparent"
+            document.getElementById("box").style.color="black"
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Text</title>
+</head>
+<style>
+    #text{
+        transition: 1s;
+        display: block;
+    }
+</style>
+<body>
+    <h1 id="text">Welcome To Sagar Prashikshan Sansthan</h1>
+    <script>
+        i=0
+        font=25
+        color=['red','green','blue','yellow','gray']
+        x= document.getElementById("text")
+
+        function changecolor(){
+            x.style.color=color[i]
+            x.style.fontSize=font+"px"
+            font+=5
+            i+=1
+            if(i==color.length)
+            {
+                i=0
+                font=25
+            }
+            x.style.backgroundColor=color[i]
+        }
+        setInterval(changecolor,1500)
+    </script>
+</body>
+</html>
